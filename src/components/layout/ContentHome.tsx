@@ -69,7 +69,6 @@ const ContentHome = () => {
         console.log('Error fetching bounties:', error);
       }
     };
-
     fetchData();
   }, [primaryWallet]);
 

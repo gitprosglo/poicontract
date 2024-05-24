@@ -326,7 +326,6 @@ export const joinOpenBounty: JoinOpenBountyFunction = async (
 
 export const fetchBounties: FetchBountiesFunction = async (offset) => {
   const contractRead = await getContractRead();
-
   const rawBounties = await contractRead.getBounties(offset);
   const bounties: Bounty[] = rawBounties
     .map((bounty: any) => ({
@@ -417,7 +416,6 @@ export const getBountiesByUser: GetBountiesByUserFunction = async (
 export const fetchAllBounties: GetAllBountiesFunction = async () => {
   const contractRead = await getContractRead();
   const bountyCounter = await contractRead.bountyCounter();
-
   let allBounties: Bounty[] = [];
 
   const totalBounties = Number(bountyCounter.toString());
